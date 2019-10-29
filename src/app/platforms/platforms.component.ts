@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PlatformsService } from './platforms.service';
+import { Platform } from './platform';
 
 @Component({
   selector: 'app-platforms',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlatformsComponent implements OnInit {
 
-  constructor() { }
+  platforms: Platform[];
+
+  constructor(private platformService: PlatformsService) { }
 
   ngOnInit() {
+     this.platformService.getAllPlatforms().subscribe( (platforms) => {
+          this.platforms = platforms;
+     });
   }
 
 }
