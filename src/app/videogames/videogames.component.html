@@ -1,1 +1,14 @@
-<p>videogames works!</p>
+<mat-grid-list cols = "4" rowHeight = "100px">
+        <mat-grid-tile *ngFor="let videogame of videogames">
+                <mat-card class = "tp-card">
+                        <mat-card-header>
+                           <div mat-card-avatar class = "tp-header-image">
+                               <a title="Edit" alt="Edit"><mat-icon>edit</mat-icon></a>
+                               <a title="Delete" alt="Delete"><mat-icon>delete</mat-icon></a>
+                           </div>
+                           <mat-card-title>{{ videogame.name }}</mat-card-title>
+                           <mat-card-subtitle>Platform: {{ videogame.platform }}</mat-card-subtitle>
+                        </mat-card-header>
+                     </mat-card>
+        </mat-grid-tile>
+</mat-grid-list>
