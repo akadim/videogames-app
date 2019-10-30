@@ -4,7 +4,7 @@
                     <mat-card-header>
                        <div mat-card-avatar class = "tp-header-image">
                            <a title="Edit" alt="Edit"><mat-icon>edit</mat-icon></a>
-                           <a title="Delete" alt="Delete"><mat-icon>delete</mat-icon></a>
+                           <a title="Delete" alt="Delete" (click)="onDelete(platform.id)"><mat-icon>delete</mat-icon></a>
                        </div>
                        <mat-card-title>{{ platform.name }}</mat-card-title>
                        <mat-card-subtitle>{{ platform.company }}</mat-card-subtitle>
