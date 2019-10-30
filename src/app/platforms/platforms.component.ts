@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PlatformsService } from './platforms.service';
 import { Platform } from './platform';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-platforms',
@@ -12,12 +13,17 @@ export class PlatformsComponent implements OnInit {
 
   platforms: Platform[];
 
-  constructor(private platformService: PlatformsService, private toastr: ToastrService) { }
+  constructor(private platformService: PlatformsService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit() {
+
      this.platformService.getAllPlatforms().subscribe( (platforms) => {
           this.platforms = platforms;
      });
+  }
+
+  onEdit(id: number) {
+      this.router.navigate(['/platform/'+id]);
   }
 
   onDelete(id: number) {
