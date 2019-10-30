@@ -1,8 +1,10 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
   <span>Gaming App</span>
   <span class="example-fill-remaining-space"></span>
   <a routerLink='/platforms' mat-button>Platforms</a>&nbsp;
   <a routerLink='/videogames' mat-button>Videogames</a>
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+<div class="page-content">
+  <router-outlet></router-outlet>
+</div>

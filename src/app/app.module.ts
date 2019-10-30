@@ -5,6 +5,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -34,6 +35,7 @@ import { VideogamesEditComponent } from './videogames/videogames-edit/videogames
     MatGridListModule,
     MatCardModule,
     MatIconModule,
+    MatDividerModule,
     ToastrModule.forRoot()
   ],
   providers: [],

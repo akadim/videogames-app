@@ -24,7 +24,7 @@ export class VideogamesComponent implements OnInit {
   onDelete(id: number) {
     if(confirm('Are you sure to delete this data ?')) {
       this.videogameService.deletePlatform(id).subscribe( () => {
-        this.toastr.success('Success!', 'Platform successfully deleted!');
+        this.toastr.success('Success!', 'Videogame successfully deleted!');
         
         this.videogames.forEach( (videogame) => {
           if(videogame.id === id) {

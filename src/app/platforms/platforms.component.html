@@ -1,14 +1,22 @@
-<mat-grid-list cols = "4" rowHeight = "100px">
-    <mat-grid-tile *ngFor="let platform of platforms">
-            <mat-card class = "tp-card">
-                    <mat-card-header>
-                       <div mat-card-avatar class = "tp-header-image">
-                           <a title="Edit" alt="Edit"><mat-icon>edit</mat-icon></a>
-                           <a title="Delete" alt="Delete" (click)="onDelete(platform.id)"><mat-icon>delete</mat-icon></a>
-                       </div>
-                       <mat-card-title>{{ platform.name }}</mat-card-title>
-                       <mat-card-subtitle>{{ platform.company }}</mat-card-subtitle>
-                    </mat-card-header>
-                 </mat-card>
-    </mat-grid-tile>
- </mat-grid-list>
+<h1>Platforms</h1>
+<mat-divider></mat-divider>
+<div class="list-content">
+   <mat-grid-list cols = "6" rowHeight = "100px">
+      <mat-grid-tile *ngFor="let platform of platforms">
+              <mat-card class = "tp-card">
+                      <mat-card-header>
+                         <div mat-card-avatar class = "tp-header-image">
+                             <a title="Edit" alt="Edit"><mat-icon>edit</mat-icon></a>
+                             <a title="Delete" alt="Delete" (click)="onDelete(platform.id)"><mat-icon>delete</mat-icon></a>
+                         </div>
+                         <mat-card-title>{{ platform.name }}</mat-card-title>
+                         <mat-card-subtitle>{{ platform.company }}</mat-card-subtitle>
+                      </mat-card-header>
+              </mat-card>
+      </mat-grid-tile>
+   </mat-grid-list>
+</div>
+ <div class="action-section">
+   <a mat-fab class="add-button" color="primary"><mat-icon>add</mat-icon></a>
+ </div> 
+ 
