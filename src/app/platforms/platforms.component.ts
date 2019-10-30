@@ -21,15 +21,17 @@ export class PlatformsComponent implements OnInit {
   }
 
   onDelete(id: number) {
-     this.platformService.deletePlatform(id).subscribe( () => {
-      this.toastr.success('Success!', 'Platform successfully deleted!');
-      
-      this.platforms.forEach( (platform) => {
-        if(platform.id === id) {
-             this.platforms.splice( this.platforms.indexOf(platform), 1);
-        }
-      });
-     });
+     if(confirm('Are you sure to delete this data ?')) {
+      this.platformService.deletePlatform(id).subscribe( () => {
+        this.toastr.success('Success!', 'Platform successfully deleted!');
+        
+        this.platforms.forEach( (platform) => {
+          if(platform.id === id) {
+               this.platforms.splice( this.platforms.indexOf(platform), 1);
+          }
+        });
+       });
+     }
   }
 
 }
