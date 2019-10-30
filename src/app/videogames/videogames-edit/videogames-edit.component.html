@@ -1,1 +1,25 @@
-<p>videogames-edit works!</p>
+<h1>Edit Videogame</h1>
+<mat-divider></mat-divider>
+<div class="list-content">
+   <form [formGroup]="videogameForm" (ngSubmit)="onSubmit()" method="post">
+    <div class = "form-container">
+        <mat-form-field appearance = "standard">
+           <input matInput placeholder = "Name" formControlName="name" required>
+           <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+           <mat-hint>Name of the videogame</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance = "standard">
+                <input matInput placeholder = "Platform"  formControlName="platform" required>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint>Videogame's platform</mat-hint>
+        </mat-form-field>
+     </div>
+     <input type="hidden" name="videogameId" value="{{ videogameId }}" />
+    <button mat-button color="primary" type="submit">
+        SAVE
+    </button>
+    <button mat-button color="warn" (click)="cancelForm()">
+        CANCEL
+    </button>
+   </form>
+</div> 

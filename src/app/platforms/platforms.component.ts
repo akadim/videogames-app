@@ -29,7 +29,7 @@ export class PlatformsComponent implements OnInit {
   onDelete(id: number) {
      if(confirm('Are you sure to delete this data ?')) {
       this.platformService.deletePlatform(id).subscribe( () => {
-        this.toastr.success('Success!', 'Platform successfully deleted!');
+        this.toastr.success('Platform successfully deleted!', 'Success!');
         
         this.platforms.forEach( (platform) => {
           if(platform.id === id) {

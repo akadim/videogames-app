@@ -19,7 +19,19 @@ export class VideogamesService {
       return this.http.get<Videogame[]>(environment.apiUrl + '/videogames');
   }
 
-  deletePlatform(id: number): Observable<Videogame> {
+  getVideogame(id: number): Observable<Videogame> {
+      return this.http.get<Videogame>(environment.apiUrl + '/videogames/'+id);
+  }
+
+  addVideogame(videogame: Videogame): Observable<Videogame> {
+      return this.http.post<Videogame>(environment.apiUrl + '/videogames/', videogame, this.httpOptions);
+  }
+
+  updateVideogame(videogame: Videogame, id: number): Observable<Videogame> {
+      return this.http.put<Videogame>(environment.apiUrl + '/videogames/', { name: videogame.name, platform: videogame.platform, id: id}, this.httpOptions);
+  }
+
+  deleteVideogame(id: number): Observable<Videogame> {
       return this.http.delete<Videogame>(environment.apiUrl + '/videogames/' + id, this.httpOptions); 
   }
 }
